@@ -145,18 +145,40 @@ Would you like me to create any of the other suggested assets, such as a visual 
 ## 1. Package Manifest Overview
 
 ```mermaid
-HTML Package Structure.download-icon {
-            cursor: pointer;
-            transform-origin: center;
-        }
-        .download-icon .arrow-part {
-            transition: transform 0.35s cubic-bezier(0.35, 0.2, 0.14, 0.95);
-             transform-origin: center;
-        }
-        button:has(.download-icon):hover .download-icon .arrow-part, button:has(.download-icon):focus-visible .download-icon .arrow-part {
-          transform: translateY(-1.5px);
-        }
-        #mermaid-diagram-rem09{font-family:var(--font-geist-sans);font-size:12px;fill:#000000;}#mermaid-diagram-rem09 .error-icon{fill:#552222;}#mermaid-diagram-rem09 .error-text{fill:#552222;stroke:#552222;}#mermaid-diagram-rem09 .edge-thickness-normal{stroke-width:1px;}#mermaid-diagram-rem09 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-diagram-rem09 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-diagram-rem09 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-diagram-rem09 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-diagram-rem09 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-diagram-rem09 .marker{fill:#666;stroke:#666;}#mermaid-diagram-rem09 .marker.cross{stroke:#666;}#mermaid-diagram-rem09 svg{font-family:var(--font-geist-sans);font-size:12px;}#mermaid-diagram-rem09 p{margin:0;}#mermaid-diagram-rem09 .label{font-family:var(--font-geist-sans);color:#000000;}#mermaid-diagram-rem09 .cluster-label text{fill:#333;}#mermaid-diagram-rem09 .cluster-label span{color:#333;}#mermaid-diagram-rem09 .cluster-label span p{background-color:transparent;}#mermaid-diagram-rem09 .label text,#mermaid-diagram-rem09 span{fill:#000000;color:#000000;}#mermaid-diagram-rem09 .node rect,#mermaid-diagram-rem09 .node circle,#mermaid-diagram-rem09 .node ellipse,#mermaid-diagram-rem09 .node polygon,#mermaid-diagram-rem09 .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-diagram-rem09 .rough-node .label text,#mermaid-diagram-rem09 .node .label text{text-anchor:middle;}#mermaid-diagram-rem09 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-diagram-rem09 .node .label{text-align:center;}#mermaid-diagram-rem09 .node.clickable{cursor:pointer;}#mermaid-diagram-rem09 .arrowheadPath{fill:#333333;}#mermaid-diagram-rem09 .edgePath .path{stroke:#666;stroke-width:2.0px;}#mermaid-diagram-rem09 .flowchart-link{stroke:#666;fill:none;}#mermaid-diagram-rem09 .edgeLabel{background-color:white;text-align:center;}#mermaid-diagram-rem09 .edgeLabel p{background-color:white;}#mermaid-diagram-rem09 .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-diagram-rem09 .labelBkg{background-color:rgba(255, 255, 255, 0.5);}#mermaid-diagram-rem09 .cluster rect{fill:hsl(0, 0%, 98.9215686275%);stroke:#707070;stroke-width:1px;}#mermaid-diagram-rem09 .cluster text{fill:#333;}#mermaid-diagram-rem09 .cluster span{color:#333;}#mermaid-diagram-rem09 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-geist-sans);font-size:12px;background:hsl(-160, 0%, 93.3333333333%);border:1px solid #707070;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-diagram-rem09 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#mermaid-diagram-rem09 .flowchart-link{stroke:hsl(var(--gray-400));stroke-width:1px;}#mermaid-diagram-rem09 .marker,#mermaid-diagram-rem09 marker,#mermaid-diagram-rem09 marker *{fill:hsl(var(--gray-400))!important;stroke:hsl(var(--gray-400))!important;}#mermaid-diagram-rem09 .label,#mermaid-diagram-rem09 text,#mermaid-diagram-rem09 text>tspan{fill:hsl(var(--black))!important;color:hsl(var(--black))!important;}#mermaid-diagram-rem09 .background,#mermaid-diagram-rem09 rect.relationshipLabelBox{fill:hsl(var(--white))!important;}#mermaid-diagram-rem09 .entityBox,#mermaid-diagram-rem09 .attributeBoxEven{fill:hsl(var(--gray-150))!important;}#mermaid-diagram-rem09 .attributeBoxOdd{fill:hsl(var(--white))!important;}#mermaid-diagram-rem09 .label-container,#mermaid-diagram-rem09 rect.actor{fill:hsl(var(--white))!important;stroke:hsl(var(--gray-400))!important;}#mermaid-diagram-rem09 line{stroke:hsl(var(--gray-400))!important;}#mermaid-diagram-rem09 :root{--mermaid-font-family:var(--font-geist-sans);}LibrariesAssetsCore Filesata-ispec-simulator/index.htmlMain Entry Pointmanifest.jsonPWA Supportservice-worker.jsOffline SupportREADME.mdDocumentationcss/Stylingjs/Application Logicdata/Simulation Dataassets/images/Visual Assetsassets/icons/UI Iconsassets/fonts/Typographylib/3rd Party Libraries
+graph TD
+    ROOT["ata-ispec-simulator/"]
+    
+    subgraph "Core Files"
+        INDEX["index.html<br>Main Entry Point"]
+        MANIFEST["manifest.json<br>PWA Support"]
+        SW["service-worker.js<br>Offline Support"]
+        README["README.md<br>Documentation"]
+    end
+    
+    subgraph "Assets"
+        CSS["css/<br>Styling"]
+        JS["js/<br>Application Logic"]
+        DATA["data/<br>Simulation Data"]
+        IMAGES["assets/images/<br>Visual Assets"]
+        ICONS["assets/icons/<br>UI Icons"]
+        FONTS["assets/fonts/<br>Typography"]
+    end
+    
+    subgraph "Libraries"
+        LIBS["lib/<br>3rd Party Libraries"]
+    end
+    
+    ROOT --> INDEX
+    ROOT --> MANIFEST
+    ROOT --> SW
+    ROOT --> README
+    ROOT --> CSS
+    ROOT --> JS
+    ROOT --> DATA
+    ROOT --> IMAGES
+    ROOT --> ICONS
+    ROOT --> FONTS
+    ROOT --> LIBS
 ```
 
 ## 2. Detailed File Structure
