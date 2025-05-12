@@ -3257,7 +3257,7 @@ Provide a brief, high-level description of the System, its main purpose, its con
 
 ```mermaid
 graph TD
-    A[External System 1] -- Interface 1 --> B{System: [System Name]}
+    A[External System 1] -- Interface 1 --> B{System: System Name}
     B -- Interface 2 --> C[External System 2]
     D[User/Operator] --> B
     B --> E[Output/Effect]
@@ -4330,12 +4330,12 @@ Its primary functions are:
 ```mermaid
 graph TD
     subgraph SpacecraftBus
-        Power["SS 03: Power System"] --> CurrentSys["SS [XX.Y.Z]<br>[System/Component Name]<br>(GAIA-QAO SSS ID)"]
-        CDH["SS 02: C&DH System<br>(Commands/Telemetry)"] --- CurrentSys
-        GNC["SS 17: GN&C System<br>(Attitude/Orbit Data)"] -->|Sensor Data In| CurrentSys
+        Power["SS 03: Power System"] --> CurrentSys["SS (XX.Y.Z)\n(System/Component Name)\n(GAIA-QAO SSS ID)"]
+        CDH["SS 02: C&DH System\n(Commands/Telemetry)"] --- CurrentSys
+        GNC["SS 17: GN&C System\n(Attitude/Orbit Data)"] -->|Sensor Data In| CurrentSys
         CurrentSys -->|Actuator Cmd Out| GNC_Actuators["GNC Actuators"]
     end
-    CurrentSys -->|Mission Data/Output| PayloadOrOther["SS [AA.B.C]<br>Payload / Other System"]
+    CurrentSys -->|Mission Data/Output| PayloadOrOther["SS (AA.B.C)\nPayload / Other System"]
     GroundControl["Ground Control Center"] --Uplink/Downlink--> CDH
 ```
 
@@ -4546,26 +4546,24 @@ Provide a brief, high-level description of the Quantum System. This should inclu
 
 ```mermaid
 graph TD
-    ClassicalControl["Classical Control & Readout Electronics<br>(FPGAs, AWGs, ADCs, DSPs)<br>GAIA-QAO ID: [Classical_Ctrl_ID]"] 
-    -->|Control Sequences (Pulses, Fields)| QuantumCore{"Quantum Core Unit<br>(Qubits / Quantum Sensor Element / Entanglement Source)<br>GAIA-QAO ID: [This_System_ID]"}
+    ClassicalControl["Classical Control & Readout Electronics\n(FPGAs, AWGs, ADCs, DSPs)\nGAIA-QAO ID: Classical_Ctrl_ID"] 
+    -->|Control Sequences: Pulses and Fields| QuantumCore{"Quantum Core Unit\n(Qubits / Quantum Sensor Element / Entanglement Source)\nGAIA-QAO ID: This_System_ID"}
     QuantumCore 
-    -->|Raw Quantum State Measurement (Probabilities, Voltages)| ClassicalControl
+    -->|Raw Quantum State Measurement: Probabilities and Voltages| ClassicalControl
     
     subgraph QuantumOperationalEnvironment
-        Cryo["Cryogenic System<br>(Dilution Fridge / Cryocooler)<br>GAIA-QAO ID: [Cryo_ID]"] 
+        Cryo["Cryogenic System\n(Dilution Fridge / Cryocooler)\nGAIA-QAO ID: Cryo_ID"] 
         -- Maintains T < [Value] K --> QuantumCore
-        Vacuum["Ultra-High Vacuum System<br>GAIA-QAO ID: [Vac_ID]"] 
+        Vacuum["Ultra-High Vacuum System\nGAIA-QAO ID: Vac_ID"] 
         -- Maintains P < [Value] Torr --> QuantumCore
-        MagShield["Magnetic Shielding<br>(Mu-metal, Superconducting)"] 
+        MagShield["Magnetic Shielding\n(Mu-metal, Superconducting)"] 
         -- Reduces B_ext < [Value] nT --> QuantumCore
-        VibIso["Vibration Isolation Platform<br>GAIA-QAO ID: [VibIso_ID]"] 
+        VibIso["Vibration Isolation Platform\nGAIA-QAO ID: VibIso_ID"] 
         -- Dampens Vib > [Value] Hz --> QuantumCore
-        LaserSystem["Precision Laser System(s)<br>(for trapping, cooling, readout)<br>GAIA-QAO ID: [Laser_ID]"] 
+        LaserSystem["Precision Laser System(s)\n(for trapping, cooling, readout)\nGAIA-QAO ID: Laser_ID"] 
         -.-> QuantumCore
     end
 
-    ClassicalControl 
-    --- HostSystemInterface["Host Aerospace System Interface<br>(Power, C&DH, Timing Reference)<br>GAIA-QAO ID: [Host_Interface_ID]"]
 ```
 ## 1.4 Applicable Documents
 
