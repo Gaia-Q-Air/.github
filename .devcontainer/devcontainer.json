@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "build": "echo \"No build process is required for this documentation repository.\""
+  }
+}
