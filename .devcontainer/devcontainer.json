@@ -1,5 +1,13 @@
-please
-    "
-    "build": "No build commands are necessary for this repository. Educated polights are welcome""
-thanks
-
+{
+    "name": "GAIA-QAI Development Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-20.04",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-vscode.cpptools",
+        "rust-lang.rust",
+        "ms-python.python"
+    ],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake python3-pip"
+}
